@@ -1,19 +1,20 @@
-package com.example.OneToOne.Model;
+package com.example.Assignment5.Model;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.hibernate.annotations.GenericGenerator;
 
-import javax.persistence.*;
-import java.util.List;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name="student1")
+@Table(name="student_Detail_swagger")
 public class Student {
     @Id
     @GeneratedValue(generator = "uuid2")
@@ -21,8 +22,8 @@ public class Student {
     private String id;
     private String name;
     private Integer age;
-    @JsonIgnore
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name= "fk_Id")
-    private List<Address> address;
+
+
+
 }
+
